@@ -1,0 +1,230 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/*=====FONTS=====*/
+
+
+@font-face {
+    font-family: 'quicksandlight';
+    src: url('../_fonts/webfontkit-20170110-050701/quicksand-light-webfont.woff2') format('woff2'),
+         url('../_fonts/webfontkit-20170110-050701/quicksand-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../_fonts/webfontkit-20170110-050701/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../_fonts/webfontkit-20170110-050701/quicksand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*BASKERVILLE*/
+@font-face {
+font-family: 'Libre Baskerville';
+font-style: normal;
+font-weight: normal;
+src: local('Libre Baskerville'), url('../_fonts/baskerville/LibreBaskerville-Regular.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Libre Baskerville Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Libre Baskerville Bold'), url('../_fonts/baskerville/LibreBaskerville-Bold.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Libre Baskerville Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Libre Baskerville Italic'), url('../_fonts/baskerville/LibreBaskerville-Italic.woff') format('woff');
+}
+
+/*AVENIR_NEXT*/
+@font-face {
+font-family: 'Avenir Next LT Pro Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir Next LT Pro Regular'), url('../_fonts/avenir_next/AvenirNextLTPro-Regular.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Avenir Next LT Pro Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir Next LT Pro Bold'), url('../_fonts/avenir_next/AvenirNextLTPro-Bold.woff') format('woff');
+}
+
+/*FUTURA*/
+@font-face {
+font-family: 'Futura Md BT Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfont.woff') format('woff');
+}
+
+#bg_video{
+    background-color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#menu_top{
+    /*background-color: rgba(0,0,0,0.1);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    max-height: 150px;
+    z-index: 100;
+    /*border-bottom: 1px solid rgba(255,255,255,0.3);*/
+    /*background-color: rgba(255,255,255,1);*/
+}
+
+/*#menu_list{
+    background-color: rgba(0,0,0,0.95);
+    width: 80%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 20%;
+}*/
+
+#menu_logo{
+    /*background-color: blue;*/
+    display: inline-block;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background:url(../_img/white_NoText.png);
+    background-position: center;
+    background-size: 20%;
+    opacity: 0.6;
+    background-repeat: no-repeat;
+}
+
+#menu_icon{
+    display: inline-block;
+    float: right;
+    /*background-color: #eee;*/
+    width: 150px;
+    height: 150px;
+    color: #eee;
+    text-align: center;
+    opacity: 0.6;
+}
+
+#menu_icon i{
+    display: inline-block;
+    margin-top: 45%;
+    font-size: 20px;
+}
+
+#content{
+    position: absolute;
+    padding: 30px;
+    width: 500px;
+/*    height: 130px;*/
+    top: 60vh;
+    left: 20%;
+    /*background-color: rgba(0,0,0,0.2);*/
+    border-radius: 5px;
+
+}
+
+#content h1{
+    margin:0;
+    margin-top: 20px;
+    color: #fff;
+    font-weight:normal;
+    display: inline-block;
+    text-align: left;
+    font-family: 'quicksandregular';
+    font-size: 30px;
+    letter-spacing: 10px;
+}
+
+#content p{
+    opacity: 0.6;
+    display: inline-block;
+    text-align: left;
+    /*margin-left: 30px;*/
+    font-family: 'quicksandlight';
+    font-size: 20px;
+    font-weight:normal;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+
+#main_content{
+    margin-top: 100vh;
+    position: relative;
+    width: 100%;
+    height: 2000px;
+    background-color: #fff;
+}
+
+
+
+/*BUTTON*/
+#video_button{
+    position: absolute;
+    width: 500px;
+/*    height: 130px;*/
+    top: 200px;
+    left: 20%;
+    /*background-color: rgba(0,0,0,0.2);*/
+    border-radius: 3px;
+}
+
+.button_big{
+    cursor: pointer;
+    margin:2.5%;
+    opacity: 0.3;
+    display: inline-block;
+    width: 40%;
+    height: 50px;
+    /*background-color: red;*/
+    text-align: center;
+    font-family: 'quicksandlight';
+    border:1px solid #eee;
+    font-size: 20px;
+    color: #eee;
+    line-height: 50px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition:all 0.3s;
+}
+
+.button_big:hover{
+    ont-family: 'quicksandregular';
+    opacity: 1;
+    background: #eee;
+    border:1px solid #eee;
+    font-size: 20px;
+    color: #000;
+}
