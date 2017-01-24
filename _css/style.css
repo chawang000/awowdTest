@@ -47,16 +47,48 @@ html, body {
   font-style: normal;
   font-weight: normal;
   src: local("Futura Md BT Medium"), url("../_fonts/futura/futura_medium_bt-webfont.woff") format("woff"); }
+#loader_wrapper {
+  position: fixed;
+  right: 0;
+  background-color: #eee;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow-y: hidden; }
+
+#loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 55%;
+  margin-left: -100px;
+  margin-top: -100px; }
+
+#loader_wrapper p {
+  color: #333;
+  font-family: 'quicksandlight';
+  font-size: 16px;
+  margin-top: -3px; }
+
+#loaderBar {
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  background-color: #333;
+  top: 95%; }
+
 #bg_video {
   background-color: black;
   position: fixed;
+  z-index: -100;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -100;
+  min-width: 100%;
+  min-height: 100%;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -68,8 +100,8 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px;
-  max-height: 150px;
+  height: 100px;
+  max-height: 100px;
   z-index: 100;
   /*border-bottom: 1px solid rgba(255,255,255,0.3);*/
   /*background-color: rgba(255,255,255,1);*/ }
@@ -81,14 +113,11 @@ html, body {
   width: 0;
   position: fixed;
   /* Stay in place */
-  z-index: 101;
+  z-index: 99;
   /* Sit on top */
   right: 0;
   top: 0;
-  background-color: black;
-  /* Black fallback color */
-  background-color: white;
-  /* Black w/opacity */
+  background-color: #eee;
   overflow-x: hidden;
   /* Disable horizontal scroll */
   transition: 0.5s;
@@ -122,7 +151,7 @@ html, body {
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-  color: #000; }
+  color: #333; }
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
@@ -144,29 +173,87 @@ html, body {
 #menu_logo {
   /*background-color: blue;*/
   display: inline-block;
-  float: left;
-  width: 150px;
-  height: 150px;
-  background: url(../_img/white_NoText.png);
-  background-position: center;
-  background-size: 20%;
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  position: relative;
   opacity: 0.6;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  cursor: pointer; }
 
-#menu_icon {
+#menu_logo svg {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.menu_icon {
+  position: relative;
   display: inline-block;
   float: right;
   /*background-color: #eee;*/
-  width: 150px;
-  height: 150px;
-  color: #eee;
+  width: 100px;
+  height: 100px;
+  margin: 25px;
   text-align: center;
-  opacity: 0.6; }
+  opacity: 0.6;
+  cursor: pointer; }
 
-#menu_icon i {
-  display: inline-block;
-  margin-top: 45%;
-  font-size: 20px; }
+/*#menu_icon i{
+    display: inline-block;
+    margin-top: 45%;
+    font-size: 20px;
+}*/
+.nav_bar {
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #eee;
+  transition: all 0.3s; }
+  .nav_bar::after {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: "";
+    transition: all 0.3s; }
+
+.menu_icon.active .nav_bar {
+  top: 0 !important;
+  left: 0 !important;
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+  background-color: #000; }
+
+.menu_icon.active .nav_bar::after {
+  top: 0 !important;
+  left: 0 !important;
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+  background-color: #000; }
+
+.menu_icon:hover .nav_bar {
+  top: 0px; }
+
+.menu_icon:hover .nav_bar::after {
+  top: 15px; }
 
 #content {
   position: relative;

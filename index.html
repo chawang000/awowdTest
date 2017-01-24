@@ -9,18 +9,51 @@
 </head>
 <body>
 
+<!-- ===========LOADER========== -->
+    <div id="loader_wrapper">
+        <div id="loader">
+            <img src="_img/loadingLogo.svg" alt="">
+            <p id="count">100</p>
+            <!-- <div id="loaderBar"></div> -->
+        </div>
+
+    </div>
+
 <!-- ===========MENU============ -->
+
     <div id="menu_top">
-        <div id="menu_logo"></div>
-        <div id="menu_icon">
-            <i class="fa fa-bars" aria-hidden="true" onclick="openNav()"></i>
+        <div id="menu_logo">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <polygon id="menuLogo" style="fill:none;stroke:rgba(255,255,255,1);stroke-width:4;stroke-linejoin:round;stroke-miterlimit:10;" points="17.664,85.75
+                    49.568,9.348 82.336,85.75 71.589,28.37 ">
+                    <animate
+                        id="menuLogoSVG"
+                        xlink:href="#menuLogo"
+                        attributeName="points"
+                        values="17,85 49,9 82,85 71,28 ;
+                                17,85 71,28 82,85 49,9;
+                                17,85 71,28 82,85 49,9"
+                        keyTimes="0 ; 0.6; 1 "
+                        dur=".7s"
+                        begin="indefinite"
+                        />
+
+                </polygon>
+            </svg>
+        </div><!-- END of menu_logo -->
+
+
+        <div class="menu_icon" class="cross">
+            <!-- <i class="fa fa-bars" aria-hidden="true" onclick="openNav()"></i> -->
+            <div class="nav_bar"></div>
         </div>
     </div>
 
     <!-- SLIDE IN NAV -->
     <div id="myNav" class="overlay">
       <!-- Button to close the overlay navigation -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
       <!-- Overlay content -->
       <div class="overlay-content">
         <a href="#">About</a>
