@@ -94,7 +94,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 #loader_wrapper{
     position:fixed;
     right: 0;
-    background-color:#eee;
+    background-color:#fff;
     z-index:999;
     width:100%;
     height:100%;
@@ -171,7 +171,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     z-index: 99; /* Sit on top */
     right: 0;
     top: 0;
-    background-color: #eee;
+    background-color: #fff;
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
@@ -275,7 +275,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     right: 0;
     margin:auto;
     background-color: #eee;
-    transition:all 0.3s;
+    transition:all 0.2s;
 
     &::after {
         width: 100%;
@@ -285,11 +285,12 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
         top:10px;
         left:0;
         content:"";
-        transition:all 0.3s;
+        transition:all 0.2s;
     }
 }
 
 .menu_icon.active .nav_bar{
+        transition:all 0.3s;
         top:0 !important;
         left:0 !important;
         -ms-transform: rotate(45deg); /* IE 9 */
@@ -298,6 +299,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
         background-color:#000;
     }
 .menu_icon.active .nav_bar::after{
+        transition:all 0.3s;
         top:0 !important;
         left:0 !important;
         -ms-transform: rotate(-90deg); /* IE 9 */
@@ -320,10 +322,11 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     width: 100%;
     height: 100vh;
 /*    height: 130px;*/
-    top: 100vh;
+    top: 76vh;
     left: 0;
     /*background-color: rgba(0,0,0,0.2);*/
     border-radius: 5px;
+    z-index:1;
 }
 
 .contentMargin{
@@ -332,12 +335,14 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 /*Scrollable Header*/
 #content_title{
     position: relative;
-    top: -40%;
+    top: -20%;
+    color:#fff;
+    z-index:2;
     // transition:all 0.1s;
 }
 
 #content h1{
-    color: #fff;
+    // color: #fff;
     font-weight:normal;
     display: inline-block;
     text-align: left;

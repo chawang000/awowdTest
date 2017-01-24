@@ -72,11 +72,31 @@ function video_bg_switch(){
         var mouseTop = target.scrollTop();
         var titleH = $('#content').css('top');
         var scrollableHeader = $("#content_title");
-        scrollableHeader.css({
-            'transform':'translate(0px, ' + mouseTop * -0.1 + 'px)'
-            // 'top':mouseCurrentH + 'px !important;'
-        });
-        console.log(titleH);
+        var scrollableHeaderP = $("#content_title p");
+        var scrollableHeaderH = $("#content_title h1");
+
+        var phase1 = false;
+        phase1 = mouseTop - 255 <= 0;
+        if(phase1){
+            scrollableHeader.css({
+                'transform':'translate( '+ mouseTop * 0+'px, ' + mouseTop * 0.5 + 'px)'});
+            scrollableHeaderH.css({
+                'opacity':(200 - mouseTop)*0.01});
+            scrollableHeaderP.css({
+                'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
+                'transform':'translate( -'+ mouseTop * 0.5+'px, ' + mouseTop * 1 + 'px)'
+                // 'top':mouseCurrentH + 'px !important;'
+            });
+        }else{
+            scrollableHeaderP.css({
+                'color':'rgb(0,0,0)',
+                'opacity':'1'
+            });
+            scrollableHeaderH.css({
+                'opacity':'0'});
+        }
+
+        // console.log(scrollableHeaderP.css);
     }
 
     function loaderOut(){
