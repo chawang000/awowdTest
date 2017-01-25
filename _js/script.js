@@ -1,12 +1,13 @@
-
-
-
+var menuColorToWhite = false;
+var menuButton = $('#menu_icon');
+var videoSwitchButton = $('.button_big');
+var videoButton = $('#video_button');
+var menuLogo = $('#menu_logo');
 
 $(document).ready(function(){
-    var menuButton = $('#menu_icon');
-    var videoSwitchButton = $('.button_big');
-    var videoButton = $('#video_button');
-    var menuLogo = $('#menu_logo');
+
+
+    // var menuColorToWhite = true;
 
     menuLogo.stop(true,true).mouseenter(function(){
         menuLogoAnimation();
@@ -67,6 +68,8 @@ function video_bg_switch(){
     // ELEMENT scroll top
 
     function headerScrollPause() {
+
+        // TITLE HEADER
         var target = $(this);
         // console.log(target);
         var mouseTop = target.scrollTop();
@@ -75,19 +78,35 @@ function video_bg_switch(){
         var scrollableHeaderP = $("#content_title p");
         var scrollableHeaderH = $("#content_title h1");
 
-        var phase1 = false;
-        phase1 = mouseTop - 255 <= 0;
+        var menuLogoSVG = $('#menuLogo');
+
+        // NAV
+
+        var phase1 =  mouseTop - 255 <= 0;
+        // PHASE1 distance (using 255 here) should be based on window hight.
         if(phase1){
+
+            if(menuColorToWhite){
+                console.log('turn white');
+                document.getElementById("menuLogo").style.stroke = ('rgb(255,255,255)');
+                menuColorToWhite = false;
+            }
             scrollableHeader.css({
                 'transform':'translate( '+ mouseTop * 0+'px, ' + mouseTop * 0.5 + 'px)'});
             scrollableHeaderH.css({
                 'opacity':(200 - mouseTop)*0.01});
             scrollableHeaderP.css({
                 'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
-                'transform':'translate( -'+ mouseTop * 0.5+'px, ' + mouseTop * 1 + 'px)'
+                'transform':'translate( -'+ mouseTop * 0.4+'px, ' + mouseTop * 1 + 'px)'
                 // 'top':mouseCurrentH + 'px !important;'
             });
         }else{
+            if(menuColorToWhite == false){
+                console.log('turn black');
+                // menuLogoSVG.style.fill('red');
+                document.getElementById("menuLogo").style.stroke = ('rgb(0,0,0)');
+                menuColorToWhite = true;
+            }
             scrollableHeaderP.css({
                 'color':'rgb(0,0,0)',
                 'opacity':'1'
@@ -95,6 +114,7 @@ function video_bg_switch(){
             scrollableHeaderH.css({
                 'opacity':'0'});
         }
+
 
         // console.log(scrollableHeaderP.css);
     }
@@ -112,7 +132,7 @@ function video_bg_switch(){
             $(this).prop('Counter',0).animate({
                 Counter: $(this).text()
             }, {
-                duration: 4000,
+                duration: 400,
                 easing: 'swing',
                 step: function (now) {
                     var number = Math.ceil(now)
@@ -127,9 +147,9 @@ function video_bg_switch(){
     }
 
     function menuLogoAnimation(){
-        var menuLogoSVG = document.getElementById("menuLogoSVG");
-        console.log(menuLogoSVG);
-        menuLogoSVG.beginElement();
+        var menuLogoSVGAni = document.getElementById("menuLogoSVGAni");
+        console.log(menuLogoSVGAni);
+        menuLogoSVGAni.beginElement();
     }
 
     function menuNavAnimation(){

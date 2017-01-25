@@ -193,14 +193,14 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     text-decoration: none;
     font-size: 20px;
     letter-spacing: 1px;
-    color: #818181;
+    color: #999;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
-    color: #333;
+    color: #000;
 }
 
 /* Position the close button (top right corner) */
@@ -230,7 +230,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     height: $menuHeight;
     margin:$menuPadding;
     position: relative;
-    opacity: 0.6;
+    opacity: 0.8;
     background-repeat: no-repeat;
     cursor:pointer;
 }
@@ -255,7 +255,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     height: $menuHeight;
     margin:$menuPadding;
     text-align: center;
-    opacity: 0.6;
+    opacity: 0.8;
     cursor:pointer;
 }
 
@@ -274,7 +274,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     left: 0;
     right: 0;
     margin:auto;
-    background-color: #eee;
+    background-color: #fff;
     transition:all 0.2s;
 
     &::after {
