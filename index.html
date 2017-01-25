@@ -37,16 +37,44 @@
                         keyTimes="0 ; 0.6; 1 "
                         dur=".7s"
                         begin="indefinite"
+                        fill="freeze"
                         />
+
+                    <animate
+                        id="menuLogoSVGtoLine"
+                        xlink:href="#menuLogo"
+                        attributeName="points"
+                        values="17,85 49,9 82,85 71,28;
+                        17,50 17,50 71,50 71,50;
+                        17,50 17,50 71,50 71,50"
+                        keyTimes="0 ; 0.6; 1 "
+                        dur="0.3s"
+                        begin="indefinite"
+                        fill="freeze"
+                        />
+
+                    <animate
+                    id="menuLineToSVG"
+                    xlink:href="#menuLogo"
+                    attributeName="points"
+                    values="17,50 17,50 71,50 71,50;
+                    17,50 17,50 71,50 71,50;
+                    17,85 49,9 82,85 71,28"
+                    keyTimes="0 ; 0.6; 1 "
+                    dur="0.3s"
+                    begin="indefinite"
+                    fill="freeze"
+                    />
 
                 </polygon>
             </svg>
         </div><!-- END of menu_logo -->
 
 
-        <div class="menu_icon" class="cross">
+        <div id="nav_icon" class="menu_icon" class="cross">
             <!-- <i class="fa fa-bars" aria-hidden="true" onclick="openNav()"></i> -->
-            <div class="nav_bar"></div>
+            <div id="bar_1" class="nav_bar"></div>
+            <div id="bar_2" class="nav_bar"></div>
         </div>
     </div>
 

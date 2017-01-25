@@ -276,18 +276,23 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     margin:auto;
     background-color: #fff;
     transition:all 0.2s;
-
-    &::after {
-        width: 100%;
-        height: 2px;
-        background-color:#fff;
-        position:absolute;
-        top:10px;
-        left:0;
-        content:"";
-        transition:all 0.2s;
-    }
+    // &::after {
+    //     width: 100%;
+    //     height: 2px;
+    //     background-color:#fff;
+    //     position:absolute;
+    //     top:10px;
+    //     left:0;
+    //     content:"";
+    //     transition:all 0.2s;
+    // }
 }
+
+#bar_2{
+    top:30px;
+}
+
+
 
 .menu_icon.active .nav_bar{
         transition:all 0.3s;
@@ -298,21 +303,31 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
         transform: rotate(45deg);
         background-color:#000;
     }
-.menu_icon.active .nav_bar::after{
+.menu_icon.active .nav_bar:nth-child(2){
         transition:all 0.3s;
         top:0 !important;
         left:0 !important;
-        -ms-transform: rotate(-90deg); /* IE 9 */
-        -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-        transform: rotate(-90deg);
+        -ms-transform: rotate(-45deg); /* IE 9 */
+        -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+        transform: rotate(-45deg);
         background-color:#000;
     }
+
+.menu_icon.black .nav_bar{
+        background-color:#000;
+        transition:all 0.3s;
+}
+
+.menu_icon.black .nav_bar::after{
+        background-color:#000;
+        transition:all 0.3s;
+}
 
 .menu_icon:hover .nav_bar{
     top:0px;
 }
-.menu_icon:hover .nav_bar::after{
-    top: 15px;
+.menu_icon:hover #bar_2{
+    top: 20px;
 }
 
 

@@ -1,8 +1,11 @@
 var menuColorToWhite = false;
+var menuIsLine = false;
 var menuButton = $('#menu_icon');
 var videoSwitchButton = $('.button_big');
 var videoButton = $('#video_button');
 var menuLogo = $('#menu_logo');
+var menuHeight;
+var lastScrollTop = 0;
 
 $(document).ready(function(){
 
@@ -37,7 +40,20 @@ $(document).ready(function(){
         // var mouseTop = $(this).scrollTop();
         var contentH = $('#content').scrollTop();
         var HeaderCurrentH = contentH - menuH;
-        headerScrollPause();
+
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop){
+           // downscroll code
+                menuScrollDown();
+            } else {
+              // upscroll code
+                menuScrollUp();
+            }
+
+        lastScrollTop = st;
+        headerScrollPause();//TODO function name should be changed
+
+
         // m.throttle(headerScrollPause, 100);
         // headerScrollPause(mouseTop);
         // if (menuH <= mouseTop) {
@@ -89,6 +105,7 @@ function video_bg_switch(){
             if(menuColorToWhite){
                 console.log('turn white');
                 document.getElementById("menuLogo").style.stroke = ('rgb(255,255,255)');
+                $("#nav_icon").removeClass('black');
                 menuColorToWhite = false;
             }
             scrollableHeader.css({
@@ -105,6 +122,7 @@ function video_bg_switch(){
                 console.log('turn black');
                 // menuLogoSVG.style.fill('red');
                 document.getElementById("menuLogo").style.stroke = ('rgb(0,0,0)');
+                $("#nav_icon").addClass('black');
                 menuColorToWhite = true;
             }
             scrollableHeaderP.css({
@@ -132,7 +150,7 @@ function video_bg_switch(){
             $(this).prop('Counter',0).animate({
                 Counter: $(this).text()
             }, {
-                duration: 400,
+                duration: 4000,
                 easing: 'swing',
                 step: function (now) {
                     var number = Math.ceil(now)
@@ -146,10 +164,65 @@ function video_bg_switch(){
         });
     }
 
-    function menuLogoAnimation(){
+    function menuLogoAnimation(){//this is for hover
         var menuLogoSVGAni = document.getElementById("menuLogoSVGAni");
-        console.log(menuLogoSVGAni);
+        // console.log(menuLogoSVGAni);
         menuLogoSVGAni.beginElement();
+    }
+
+
+    function menuLogoToLine(){//this function is controlling both logo and nav to line
+        var menuLogoSVGAni = document.getElementById("menuLogoSVGtoLine");
+        // console.log(menuLogoSVGtoLine);
+        if(menuIsLine == false){
+            menuLogoSVGtoLine.beginElement();
+            menuNavToLine();
+            menuOut();
+            menuIsLine = true;
+        }
+
+    }
+
+    function menuNavToLine(){
+        $('#bar_2').animate({'top':'0px'},100);
+        // console.log('nav bar to line');
+    }
+
+    function menuOut(){
+        menuHeight = $('#menu_top').height();
+        $('#menu_top').animate({opacity:'0','top':'-50px'},500,function(){
+            $(this).css({'display':'none'});
+        });
+    }
+
+    function menuScrollDown(){
+        menuLogoToLine();
+        // menuNavToLine();
+    }
+
+    function menuIn(){
+        $('#menu_top').css({'display':'block'})
+        $('#menu_top').animate({opacity:'1','top':'0px'},100);
+    }
+
+    function menuLineToLogo(){
+        var menuLogoSVGAni = document.getElementById("menuLineToSVG");
+        // console.log(menuLogoSVGtoLine);
+        if(menuIsLine == true){
+            menuLogoSVGAni.beginElement();
+            menuLineToNav()
+            menuIn();
+            menuIsLine = false;
+            // console.log('toLogo animated');
+        }
+    }
+
+    function menuLineToNav(){
+        $('#bar_2').animate({'top':'30px'},300);
+    }
+
+    function menuScrollUp(){
+        menuLineToLogo();
     }
 
     function menuNavAnimation(){
