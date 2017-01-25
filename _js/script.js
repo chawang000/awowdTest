@@ -114,7 +114,7 @@ function video_bg_switch(){
                 'opacity':(200 - mouseTop)*0.01});
             scrollableHeaderP.css({
                 'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
-                'transform':'translate( -'+ mouseTop * 0.4+'px, ' + mouseTop * 1 + 'px)'
+                'transform':'translate( '+ mouseTop * 1.6+'px, ' + mouseTop * 1 + 'px)'
                 // 'top':mouseCurrentH + 'px !important;'
             });
         }else{
@@ -150,7 +150,7 @@ function video_bg_switch(){
             $(this).prop('Counter',0).animate({
                 Counter: $(this).text()
             }, {
-                duration: 4000,
+                duration: 400,
                 easing: 'swing',
                 step: function (now) {
                     var number = Math.ceil(now)

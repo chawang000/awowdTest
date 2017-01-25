@@ -271,7 +271,7 @@ html, body {
   z-index: 1; }
 
 .contentMargin {
-  margin: 0 20%; }
+  margin-left: 150px; }
 
 /*Scrollable Header*/
 #content_title {
@@ -290,7 +290,7 @@ html, body {
 
 #content p {
   opacity: 0.6;
-  width: 500px;
+  width: 550px;
   /*display: inline-block;*/
   text-align: left;
   /*margin-left: 30px;*/
