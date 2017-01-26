@@ -150,7 +150,7 @@ function video_bg_switch(){
             $(this).prop('Counter',0).animate({
                 Counter: $(this).text()
             }, {
-                duration: 400,
+                duration: 4000,
                 easing: 'swing',
                 step: function (now) {
                     var number = Math.ceil(now)
