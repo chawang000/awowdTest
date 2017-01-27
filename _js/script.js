@@ -98,30 +98,34 @@ function video_bg_switch(){
 
         // NAV
 
-        var phase1 =  mouseTop - 255 <= 0;
+        var phase1 =  mouseTop - 650 <= 0;
         // PHASE1 distance (using 255 here) should be based on window hight.
         if(phase1){
 
             if(menuColorToWhite){
                 console.log('turn white');
                 document.getElementById("menuLogo").style.stroke = ('rgb(255,255,255)');
+                $('#menu_top').css({'backgroundColor':'transparent'});
                 $("#nav_icon").removeClass('black');
                 menuColorToWhite = false;
             }
-            scrollableHeader.css({
-                'transform':'translate( '+ mouseTop * 0+'px, ' + mouseTop * 0.5 + 'px)'});
-            scrollableHeaderH.css({
-                'opacity':(200 - mouseTop)*0.01});
-            scrollableHeaderP.css({
-                'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
-                'transform':'translate( '+ mouseTop * 1.6+'px, ' + mouseTop * 1 + 'px)'
-                // 'top':mouseCurrentH + 'px !important;'
-            });
+                if(mouseTop - 255 <= 0){
+                    scrollableHeader.css({
+                        'transform':'translate( '+ mouseTop * 0+'px, ' + mouseTop * 0.5 + 'px)'});
+                    scrollableHeaderH.css({
+                        'opacity':(200 - mouseTop)*0.01});
+                    scrollableHeaderP.css({
+                        'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
+                        'transform':'translate( '+ mouseTop * 1.6+'px, ' + mouseTop * 1.1 + 'px)'
+                        // 'top':mouseCurrentH + 'px !important;'
+                    });
+                }
         }else{
             if(menuColorToWhite == false){
                 console.log('turn black');
                 // menuLogoSVG.style.fill('red');
                 document.getElementById("menuLogo").style.stroke = ('rgb(0,0,0)');
+                $('#menu_top').css({'backgroundColor':'#fff'});
                 $("#nav_icon").addClass('black');
                 menuColorToWhite = true;
             }
@@ -150,7 +154,7 @@ function video_bg_switch(){
             $(this).prop('Counter',0).animate({
                 Counter: $(this).text()
             }, {
-                duration: 4000,
+                duration: 400,
                 easing: 'swing',
                 step: function (now) {
                     var number = Math.ceil(now)
