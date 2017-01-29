@@ -1,11 +1,16 @@
 var menuColorToWhite = false;
 var menuIsLine = false;
+var imageOut_1 = false;
+var imageOut_2 = false;
+var text_2 = $('#text_2');
 var menuButton = $('#menu_icon');
 var videoSwitchButton = $('.button_big');
 var videoButton = $('#video_button');
 var menuLogo = $('#menu_logo');
 var menuHeight;
 var lastScrollTop = 0;
+var img_1 = $('#sec_img');
+var img_2 = $('#sec_img_2');
 
 $(document).ready(function(){
 
@@ -99,9 +104,34 @@ function video_bg_switch(){
         // NAV
 
         var phase1 =  mouseTop - 650 <= 0;
+        var imageP1 = mouseTop - 300 >= 0;
+        var imageP2 = mouseTop - 900 >=0;
+        // IMG1
+        if(imageP1){
+            if(imageOut_1 == false){
+                imageOut_1 = true;
+                imgShow(img_1);
+            }
+        }
+        // IMG2
+        if(imageP2){
+            if(imageOut_2 == false){
+                imageOut_2 = true;
+                imgShow(img_2);
+            }
+
+            if(mouseTop - 1100 >=0){
+                if(mouseTop - 1800 <= 0){
+                    textMoveUp(text_2,mouseTop);
+                    // console.log(mouseTop);
+                }
+            }
+
+        }
+
+
         // PHASE1 distance (using 255 here) should be based on window hight.
         if(phase1){
-
             if(menuColorToWhite){
                 console.log('turn white');
                 document.getElementById("menuLogo").style.stroke = ('rgb(255,255,255)');
@@ -110,6 +140,7 @@ function video_bg_switch(){
                 menuColorToWhite = false;
             }
                 if(mouseTop - 255 <= 0){
+
                     scrollableHeader.css({
                         'transform':'translate( '+ mouseTop * 0+'px, ' + mouseTop * 0.5 + 'px)'});
                     scrollableHeaderH.css({
@@ -251,4 +282,16 @@ function video_bg_switch(){
             })
         }
     }
+
+
+//CONTENT ANIMATION
+
+function imgShow(imgID){
+    imgID.stop(true,true).animate({'margin-top':'0px','opacity':'1'},1500);
+    // console.log('lalala');
+}
+
+function textMoveUp(textID,mouseTop){
+    textID.css({'transform':'translate( '+ mouseTop * 0+'px, -' + mouseTop /5 + 'px)'});
+}
 
