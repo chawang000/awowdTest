@@ -1,7 +1,12 @@
 
 $menuHeight: 100px;
-$menuPadding: 25px;
+$menuPadding: 0px;
 $loaderW: 100px;
+$portraitImgW: 400px;
+$portraitImgH: $portraitImgW*4/3;
+$contentSmallText: 16px;
+$titleSmallText: 30px;
+$titleBigText: 60px;
 
 
 
@@ -155,8 +160,8 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     top: 0;
     left: 0;
     width: 100%;
-    height: $menuHeight + 50px;
-    max-height: $menuHeight + 50px;
+    height: $menuHeight + 0px;
+    max-height: $menuHeight + 0px;
     z-index: 100;
     /*border-bottom: 1px solid rgba(255,255,255,0.3);*/
     // background-color: rgba(255,255,255,1);
@@ -345,21 +350,22 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 }
 
 .marginLeft{
-    margin-left:150px;
+    margin-left:100px;
 }
 
 .marginRight{
-    margin-right:150px;
+    margin-right:100px;
 }
 
 /*Scrollable Header*/
 #content_title{
     position: relative;
-    top: -20%;
+    top: -30%;
     color:#fff;
     z-index:2;
     // transition:all 0.1s;
 }
+
 
 #content h1{
     // color: #fff;
@@ -367,7 +373,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     display: inline-block;
     text-align: left;
     font-family: 'Avenir Next LT Pro Bold';
-    font-size: 40px;
+    font-size: $titleBigText;
     letter-spacing: 10px;
 }
 
@@ -378,13 +384,16 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     text-align: left;
     /*margin-left: 30px;*/
     font-family: 'quicksandregular';
-    font-size: 22px;
+    font-size: $contentSmallText;
     font-weight:normal;
     color: #fff;
     letter-spacing: 1px;
     line-height: 45px;
 }
 
+#content p.movedownText{
+    font-size: $titleSmallText;
+}
 
 
 
@@ -448,7 +457,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 }
 
 #main_content p{
-    color:#000;
+    color:#777;
     opacity:1;
 }
 
@@ -461,8 +470,8 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 }
 
 #sec_img{
-    height:400px;
-    width:300px;
+    height:$portraitImgH;
+    width:$portraitImgW;
     margin-top:200px;
     opacity: 0;
     background:url('../_img/content/Girl_Jellyfish_side_v2_a3.jpg');

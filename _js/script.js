@@ -267,6 +267,8 @@ function video_bg_switch(){
             var toggle = menuIcon[i];
             toggleSwitch(toggle);
         }
+
+        // NEED TO SEPRATE THE OPEN AND CLOSE FUNCTION
         function toggleSwitch(toggle){
             toggle.addEventListener('click', function(){
                 if(this.classList.contains('active') === true){

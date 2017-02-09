@@ -100,8 +100,8 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150px;
-  max-height: 150px;
+  height: 100px;
+  max-height: 100px;
   z-index: 100;
   /*border-bottom: 1px solid rgba(255,255,255,0.3);*/ }
 
@@ -174,7 +174,7 @@ html, body {
   display: inline-block;
   width: 100px;
   height: 100px;
-  margin: 25px;
+  margin: 0px;
   position: relative;
   opacity: 0.8;
   background-repeat: no-repeat;
@@ -197,7 +197,7 @@ html, body {
   /*background-color: #eee;*/
   width: 100px;
   height: 100px;
-  margin: 25px;
+  margin: 0px;
   text-align: center;
   opacity: 0.8;
   cursor: pointer; }
@@ -270,15 +270,15 @@ html, body {
   z-index: 1; }
 
 .marginLeft {
-  margin-left: 150px; }
+  margin-left: 100px; }
 
 .marginRight {
-  margin-right: 150px; }
+  margin-right: 100px; }
 
 /*Scrollable Header*/
 #content_title {
   position: relative;
-  top: -20%;
+  top: -30%;
   color: #fff;
   z-index: 2; }
 
@@ -287,7 +287,7 @@ html, body {
   display: inline-block;
   text-align: left;
   font-family: 'Avenir Next LT Pro Bold';
-  font-size: 40px;
+  font-size: 60px;
   letter-spacing: 10px; }
 
 #content p {
@@ -297,11 +297,14 @@ html, body {
   text-align: left;
   /*margin-left: 30px;*/
   font-family: 'quicksandregular';
-  font-size: 22px;
+  font-size: 16px;
   font-weight: normal;
   color: #fff;
   letter-spacing: 1px;
   line-height: 45px; }
+
+#content p.movedownText {
+  font-size: 30px; }
 
 /*BUTTON*/
 #video_button {
@@ -353,7 +356,7 @@ html, body {
   padding-top: 160px; }
 
 #main_content p {
-  color: #000;
+  color: #777;
   opacity: 1; }
 
 #section_1 {
@@ -362,8 +365,8 @@ html, body {
   width: auto; }
 
 #sec_img {
-  height: 400px;
-  width: 300px;
+  height: 533.33333px;
+  width: 400px;
   margin-top: 200px;
   opacity: 0;
   background: url("../_img/content/Girl_Jellyfish_side_v2_a3.jpg");
