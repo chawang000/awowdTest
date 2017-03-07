@@ -367,6 +367,8 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 }
 
 
+
+
 #content h1{
     // color: #fff;
     font-weight:normal;
@@ -391,9 +393,18 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     line-height: 45px;
 }
 
-#content p.movedownText{
-    font-size: $titleSmallText;
+#content_title p{
+    font-size: 30px;
 }
+
+.movedownText{
+    /*position: relative;*/
+    display: inline;
+    width: 550px;
+    margin-left: 10px;
+    /*float: left;*/
+}
+
 
 
 
@@ -444,7 +455,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 #main_content_wrapper{
     /*margin-top: 100vh;*/
     position: relative;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 2000px;
@@ -481,7 +492,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
 
 #sec_para_2{
     margin-left:105px;
-    margin-top:100px;
+    margin-top:320px;
     float:left;
     width:500px;
 }
@@ -490,7 +501,7 @@ src: local('Futura Md BT Medium'), url('../_fonts/futura/futura_medium_bt-webfon
     position:relative;
     height:auto;
     width:auto;
-    margin-top:130px;
+    margin-top:330px;
     /*// background:red;*/
     padding:0px;
 }

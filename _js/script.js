@@ -86,8 +86,9 @@ function video_bg_switch(){
         document.getElementById("myNav").style.width = "0%";
     }
 
-    // ELEMENT scroll top
 
+
+    // ELEMENT scroll top
     function headerScrollPause() {
 
         // TITLE HEADER
@@ -96,7 +97,7 @@ function video_bg_switch(){
         var mouseTop = target.scrollTop();
         var titleH = $('#content').css('top');
         var scrollableHeader = $("#content_title");
-        var scrollableHeaderP = $("#content_title p");
+        var scrollableHeaderP = $("#content_title .movedownText");
         var scrollableHeaderH = $("#content_title h1");
 
         var menuLogoSVG = $('#menuLogo');
@@ -146,8 +147,18 @@ function video_bg_switch(){
                     scrollableHeaderH.css({
                         'opacity':(200 - mouseTop)*0.01});
                     scrollableHeaderP.css({
+
                         'color':'rgb('+ (255 - mouseTop) + ', '+ (255 - mouseTop) + ' , ' + (255 - mouseTop) + ')',
-                        'transform':'translate( '+ mouseTop * 1.6+'px, ' + mouseTop * 1.1 + 'px)'
+                        'transform':'translate( '+ mouseTop * 1.5+'px, ' + mouseTop * 1.2 + 'px)',
+                        // 'font-family':'Avenir Next LT Pro Bold',
+                        'font-size': 30 + mouseTop/20 + 'px',
+                        // 'width' : 550 - mouseTop/1 + 'px',
+                        'font-weight':600 + mouseTop * 100,
+                        // 'word-break': 'break-all',
+                        // 'text-transform': 'uppercase',
+                        'position':'absolute',
+                        'line-height':45 + mouseTop/10 +'px',
+                        'letter-spacing': 1 +mouseTop/30
                         // 'top':mouseCurrentH + 'px !important;'
                     });
                 }
